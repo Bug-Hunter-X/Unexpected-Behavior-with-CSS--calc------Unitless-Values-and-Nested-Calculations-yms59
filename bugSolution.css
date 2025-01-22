@@ -1,0 +1,16 @@
+To avoid issues with `calc()`, always specify units for all values. If you need to perform complex calculations, consider breaking them down into simpler steps or using CSS variables (custom properties) for better readability and maintainability:
+
+```css
+:root {
+  --element-width: 50%;
+  --offset: 10px;
+}
+
+.element {
+  width: calc(var(--element-width) + var(--offset));
+}
+```
+
+This approach improves code clarity and reduces the chance of unexpected behavior due to unit inconsistencies.  For nested `calc()` situations, refactor the expression into smaller, independent `calc()` functions or use CSS variables to break down the calculations for better readability and maintainability. 
+
+Avoid overly complex nested `calc()` functions; they are harder to read, debug, and maintain.
