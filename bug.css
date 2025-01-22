@@ -1,0 +1,19 @@
+The CSS property `calc()` is used to perform calculations within CSS. However, if you use `calc()` with a unitless value, and then try to use it with another unit (like `px`, `em`, `rem`), it might cause unexpected behavior or errors.  This is because the unitless value is not treated consistently across browsers. For example:
+
+```css
+.element {
+  width: calc(50% + 10);
+}
+```
+
+In this case, `10` (unitless) might be interpreted differently by various browsers compared to `10px`.
+
+Another less common issue is when using nested `calc()` functions without proper spacing and parenthesis.  This can lead to unexpected results or parsing errors.
+
+```css
+.element {
+  width: calc(calc(50% - 10px) + 20px);
+}
+```
+
+This might work, but nested `calc()` is hard to read and debug.  Using more straightforward expressions is preferred.
